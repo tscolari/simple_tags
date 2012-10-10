@@ -7,13 +7,13 @@ module SimpleTags
     let(:tag)           { FactoryGirl.create(:tag) }
 
     context "Dynamic Association" do
-      describe "taggable_class_name + taggings" do
+      describe "taggings dynamic association" do
         it { should have_many(:dummy_object_taggings)}
         it { should have_many(:dummy_object2_taggings)}
         it { should_not have_many(:dummy_object3_taggings)}
       end
 
-      describe "taggable_class_name.pluralize" do
+      describe "taggable name dynamic association" do
         it { should have_many(:dummy_objects)}
         it { should have_many(:dummy_object2s)}
         it { should_not have_many(:dummy_object3s)}
@@ -26,7 +26,11 @@ module SimpleTags
           tag.dummy_objects.include?(dummy_object2).should be_false
         end
       end
+    end
 
+    context "Validations" do
+      it { should validate_uniqueness_of(:name) }
+      it { should validate_presence_of(:name) }
     end
 
   end

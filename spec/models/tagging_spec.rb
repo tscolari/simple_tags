@@ -9,5 +9,10 @@ module SimpleTags
         it { should_not belong_to(:dummy_object3_filter) }
       end
     end
+
+    context "Validations" do
+      it { should validate_presence_of(:tag) }
+      it { should validate_presence_of(:taggable) }
+    end
   end
 end
