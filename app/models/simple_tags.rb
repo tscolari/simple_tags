@@ -1,0 +1,2 @@
+module SimpleTags
+end
