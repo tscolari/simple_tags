@@ -7,11 +7,11 @@ require "simple_tags/version"
 Gem::Specification.new do |s|
   s.name        = "simple_tags"
   s.version     = SimpleTags::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of SimpleTags."
-  s.description = "TODO: Description of SimpleTags."
+  s.authors     = ["Tiago Scolari"]
+  s.email       = ["tscolari@gmail.com"]
+  s.homepage    = "https://github.com/tscolari/simple_tags"
+  s.summary     = "Simple Tagging Gem"
+  s.description = "Simple tagging system for Ruby on Rails"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
