@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple_tags (0.0.1)
+    simple_tags (0.1)
       rails (~> 3.2.8)
 
 GEM

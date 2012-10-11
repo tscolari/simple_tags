@@ -1,3 +1,70 @@
 = SimpleTags
 
-This project rocks and uses MIT-LICENSE.
+Simple tagging system for ruby on rails.
+
+== Instalation
+
+  # Gemfile
+  gem 'simple_tags'
+
+
+  rails g simple_tags:migrations
+  rake db:migrate
+
+
+== Configuration
+
+You should add the Taggings module to the models you want to tag:
+
+  class SomeTaggableModel < ActiveRecord::Base
+    include SimpleTags::Taggable
+  end
+
+That's it, no configuration needed. Include `SimpleTags::Taggable` to every model you want to tag.
+
+== Use
+
+=== Adding tags
+
+  model = SomeTaggableModel.first
+  model.tags << [SimpleTags::Tag.create(name: 'cool'), SimpleTags::Tag.create(name: 'nice')
+
+
+
+  model = SomeTaggableModel.first
+  model.tag_list = "cool, nice"
+
+
+=== Listing Tags
+
+  model = SomeTaggableModel.first
+  model.tags
+  # Active relation tag list
+
+
+  model = SomeTaggableModel.first
+  model.tag_list
+  # String with tag names separated by commas
+
+
+=== Taggable listings
+
+Dynamic associations are created everytime you include `SimpleTags::Taggable` to a model. For example:
+
+  class Article < ActiveRecord::Base
+    include SimpleTags::Taggable
+  end
+
+# after that, the Tag models will have an `articles` relation
+
+  tag = SimpleTags::Tag.first
+  tag.articles
+
+
+You can list all taggings of a tag using the `taggings` relation:
+
+  tag.taggings
+
+= License
+
+MIT License. Copyright 2012 Tiago Scolari
