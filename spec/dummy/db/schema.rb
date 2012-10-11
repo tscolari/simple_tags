@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010002525978780) do
+ActiveRecord::Schema.define(:version => 20121011020236011199) do
 
   create_table "dummy_object2s", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -38,7 +38,8 @@ ActiveRecord::Schema.define(:version => 20121010002525978780) do
   add_index "simple_tags_taggings", ["taggable_type", "taggable_id"], :name => "taggings_taggable_idx"
 
   create_table "simple_tags_tags", :force => true do |t|
-    t.string "name", :null => false
+    t.string  "name",                          :null => false
+    t.integer "taggings_count", :default => 0
   end
 
   add_index "simple_tags_tags", ["name"], :name => "index_simple_tags_tags_on_name", :unique => true
