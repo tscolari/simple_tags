@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simple_tags (0.2)
+    simple_tags (0.2.1)
       rails (~> 3.2.8)
 
 GEM
@@ -117,7 +117,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.34)
+    tzinfo (0.3.35)
 
 PLATFORMS
   ruby
