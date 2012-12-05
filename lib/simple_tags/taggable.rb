@@ -20,7 +20,7 @@ module SimpleTags
         belongs_to "#{relation_name}_filter".to_sym, class_name: relation_class_name, foreign_key: 'taggable_id'
       end
 
-      has_many :taggings, as: 'taggable', dependent: :destroy, class_name: 'SimpleTags::Tagging'
+      has_many :taggings, as: 'taggable', dependent: :destroy, class_name: 'SimpleTags::Tagging', inverse_of: :taggable
       has_many :tags, through: :taggings, class_name: 'SimpleTags::Tag'
     end
 
