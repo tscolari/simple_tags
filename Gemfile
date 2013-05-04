@@ -18,7 +18,6 @@ group :test, :development do
 
   platforms :ruby do
     gem 'sqlite3'
-    gem 'debugger'
   end
 
   gem 'rspec-rails'
