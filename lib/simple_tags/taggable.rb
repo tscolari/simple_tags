@@ -9,7 +9,7 @@ module SimpleTags
       # Adds a relation in the Tag model for listing this type of taggables
       #
       SimpleTags::Tag.class_eval do
-        has_many "#{relation_name}_taggings".to_sym, class_name: 'SimpleTags::Tagging', conditions: ["taggable_type = ?", relation_class_name], foreign_key: 'tag_id'
+        has_many "#{relation_name}_taggings".to_sym, -> { where('taggable_type = ?', relation_class_name) }, class_name: 'SimpleTags::Tagging', foreign_key: 'tag_id'
         has_many relation_name.pluralize.to_sym, class_name: relation_class_name, through: "#{relation_name}_taggings".to_sym, source: "#{relation_name}_filter".to_sym
       end
 
