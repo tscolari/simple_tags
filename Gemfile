@@ -21,7 +21,7 @@ group :test, :development do
   end
 
   gem 'rspec-rails'
-  gem 'database_cleaner'
+  gem 'database_cleaner', '>= 1.0.0.RC1'
   gem 'factory_girl_rails'
 end
 

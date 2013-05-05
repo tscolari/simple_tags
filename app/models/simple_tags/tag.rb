@@ -4,6 +4,6 @@ module SimpleTags
     has_many :taggings, class_name: 'SimpleTags::Tagging', dependent: :destroy
     validates :name, uniqueness: true, presence: true
 
-    attr_accessible :name
+    #attr_accessible :name
   end
 end
