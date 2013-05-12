@@ -3,7 +3,7 @@ module SimpleTags
     extend ActiveSupport::Concern
 
     included do
-      relation_name = self.name.underscore
+      relation_name = self.name.underscore.gsub('/', '_')
       relation_class_name = self.name
 
       # Adds a relation in the Tag model for listing this type of taggables
